@@ -27,4 +27,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: binary
-          path: /home/runner/work/cli-share-file/cli-share-file
+          path: /home/runner/work/cli-share-file/cli-share-file/build

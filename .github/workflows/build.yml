@@ -23,3 +23,8 @@ jobs:
           race: false
           ldflags: -s -w
           buildmode: default
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: binary
+          path: /home/runner/work/cli-share-file/cli-share-file

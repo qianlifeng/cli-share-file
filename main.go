@@ -66,8 +66,9 @@ func download(c *fiber.Ctx) error {
 
 func postAppStart() {
 	util.EnsureAppFolderExist()
-	cleanExpiredUploads()
 	migrateDB()
+
+	cleanExpiredUploads()
 }
 
 func migrateDB() {

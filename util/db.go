@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
+	"gorm.io/gorm/logger"
 	"path"
 	"sync"
 )
@@ -19,7 +20,9 @@ func getDBPath() string {
 
 func GetDB() *gorm.DB {
 	dbOnce.Do(func() {
-		conn, err := gorm.Open(sqlite.Open(getDBPath()+"?_journal_mode=WAL&_synchronous=OFF"), &gorm.Config{})
+		conn, err := gorm.Open(sqlite.Open(getDBPath()+"?_journal_mode=WAL&_synchronous=OFF"), &gorm.Config{
+			Logger: logger.Default.LogMode(logger.Silent),
+		})
 		if err != nil {
 			panic(fmt.Sprintf("Can't connect to db , path=%s, err=%s ", getDBPath(), err.Error()))
 		}

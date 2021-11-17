@@ -36,7 +36,7 @@ func upload(c *fiber.Ctx) error {
 		Id:        uploadId,
 		Location:  path.Join(util.GetUploadFolder(), uploadId),
 		FileName:  file.Filename,
-		ExpireAt:  time.Now().Add(time.Hour * 24 * 3),
+		ExpiredAt: time.Now().Add(time.Hour * 24 * 7),
 		CreatedAt: time.Now(),
 	}
 

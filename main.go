@@ -17,8 +17,8 @@ func main() {
 		BodyLimit: 1024 * 1024 * 1024, // file limit up to 1024M
 	})
 
-	app.Post("/u", upload)
-	app.Get("/d/:id/:name", download)
+	app.Post("/", upload)
+	app.Get("/:id/:name", download)
 
 	postAppStart()
 

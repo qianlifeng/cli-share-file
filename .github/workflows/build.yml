@@ -17,7 +17,7 @@ jobs:
           go_version: latest
           dest: build
           prefix: share
-          targets: windows/amd64,linux/amd64,darwin/amd64
+          targets: linux/amd64
           v: true
           x: false
           race: false

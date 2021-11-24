@@ -5,7 +5,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/qianlifeng/cli-share-file/entity"
 	"github.com/qianlifeng/cli-share-file/util"
-	"github.com/rs/xid"
+	"github.com/teris-io/shortid"
 	"log"
 	"net/url"
 	"path"
@@ -31,7 +31,7 @@ func upload(c *fiber.Ctx) error {
 		return err
 	}
 
-	uploadId := xid.New().String()
+	uploadId := shortid.MustGenerate()
 	upload := &entity.Upload{
 		Id:        uploadId,
 		Location:  path.Join(util.GetUploadFolder(), uploadId),
@@ -49,7 +49,7 @@ func upload(c *fiber.Ctx) error {
 
 	log.Printf("upload file [%s]: %s", upload.Id, upload.FileName)
 
-	return c.SendString(fmt.Sprintf("%s://%s/d/%s/%s\n", c.Request().URI().Scheme(), c.Request().URI().Host(), upload.Id, url.QueryEscape(upload.FileName)))
+	return c.SendString(fmt.Sprintf("%s://%s/%s/%s\n", c.Request().URI().Scheme(), c.Request().URI().Host(), upload.Id, url.QueryEscape(upload.FileName)))
 }
 
 func download(c *fiber.Ctx) error {

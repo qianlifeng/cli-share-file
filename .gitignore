@@ -20,3 +20,4 @@ csf
 .idea
 tshare/
 dist/
+.env

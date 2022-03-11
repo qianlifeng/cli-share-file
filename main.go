@@ -14,6 +14,7 @@ import (
 	"net/url"
 	"os"
 	"path"
+	"strconv"
 	"time"
 )
 
@@ -35,7 +36,16 @@ func main() {
 
 	postAppStart()
 
-	log.Fatal(app.Listen(":3000"))
+	port := 3000
+	if len(os.Args) > 1 {
+		userPort, err := strconv.Atoi(os.Args[1])
+		if err != nil {
+			panic("invalid http port")
+		}
+		port = userPort
+	}
+
+	log.Fatal(app.Listen(fmt.Sprintf(":%d", port)))
 }
 
 func home(c *fiber.Ctx) error {

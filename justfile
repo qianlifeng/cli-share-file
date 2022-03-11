@@ -1,7 +1,8 @@
-set dotenv-load
+set export
 
 default:
   @just --list
 
-release:
-  goreleaser release --rm-dist
+release tag:
+  git tag -a $tag
+  git push origin $tag

@@ -15,7 +15,7 @@ var (
 )
 
 func getDBPath() string {
-	return path.Join(GetAppFolder(), "csf.db")
+	return path.Join(GetAppFolder(), "tshare.db")
 }
 
 func GetDB() *gorm.DB {

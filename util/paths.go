@@ -9,7 +9,7 @@ import (
 func GetAppFolder() string {
 	cwd, err := os.Getwd()
 	if err == nil {
-		return path.Join(cwd, "csf")
+		return path.Join(cwd, "tshare")
 	}
 
 	panic("can't find app dir")

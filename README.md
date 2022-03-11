@@ -2,7 +2,7 @@ file share service that optimized for command line
 
 ## how to use
 
-1. download binary from [github actions](https://github.com/qianlifeng/tshare/actions) and start it
+1. download from release and start it
 2. add following shell script to your `~/.zshrc` or `~/.bashrc`
    ```
    share() { curl --progress-bar -F "file=@$1" http://[yourdomain]/u | tee /dev/null }   

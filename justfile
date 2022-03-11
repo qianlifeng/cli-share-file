@@ -4,4 +4,4 @@ default:
   @just --list
 
 release:
-  goreleaser release
+  goreleaser release --rm-dist

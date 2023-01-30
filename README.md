@@ -5,7 +5,7 @@ file share service that optimized for command line
 1. download from release and start it
 2. add following shell script to your `~/.zshrc` or `~/.bashrc`
    ```
-   share() { curl --progress-bar -F "file=@$1" http://[yourdomain]/u | tee /dev/null }   
+   share() { curl --progress-bar -F "file=@$1" http://[yourdomain.com] | tee /dev/null }   
    ```
 3. use `share [file]` to upload file
 4. you will get a link that can be downloaded by `wget [link]`

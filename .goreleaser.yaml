@@ -22,3 +22,6 @@ changelog:
     exclude:
       - '^docs:'
       - '^test:'
+dockers:
+  - image_templates:
+      - qianlifeng/tshare

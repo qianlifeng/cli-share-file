@@ -1,4 +1,4 @@
-file share service that optimized for command line
+File share service that optimized for command line
 
 ## Features
 

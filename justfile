@@ -3,9 +3,12 @@ set export
 default:
   @just --list
 
+# just release 0.1.3
 release tag:
-  git tag -a $tag -m $tag
-  git push origin $tag
-
-docker:
-  docker build --tag tshare .
+  # build amd64 on mac m1 chip, refer: https://prinsss.github.io/build-x86-docker-images-on-an-m1-macs/
+  # need to run follow commands first
+  # - docker buildx create --use --name m1_builder
+  # - docker buildx inspect --bootstrap
+  docker buildx build --platform linux/amd64,linux/arm64 -t qianlifeng/tshare -t qianlifeng/tshare:$tag . --push
+  git tag -a v$tag -m v$tag
+  git push origin v$tag

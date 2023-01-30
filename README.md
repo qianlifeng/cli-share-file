@@ -1,17 +1,23 @@
 file share service that optimized for command line
 
-## how to use
+## Features
 
-1. download from release and start it
-2. add following shell script to your `~/.zshrc` or `~/.bashrc`
+- Optimized for shell use, just `curl` and `wget` to share file
+- Share file anonymous, no login required
+- File will be deleted after 7 days by default
+
+## Start
+- ### Docker
+   - ```docker pull qianlifeng/tshare```
+    
+- ### Manual
+   - Download executable binary from [release](https://github.com/qianlifeng/tshare/releases) and start it
+
+## Config
+- add following shell script to your `~/.zshrc` or `~/.bashrc`
    ```
-   share() { curl --progress-bar -F "file=@$1" http://[yourdomain.com] | tee /dev/null }   
+   share() { curl --progress-bar -F "file=@$1" http://[yourdomain or ip] | tee /dev/null }   
    ```
-3. use `share [file]` to upload file
-4. you will get a link that can be downloaded by `wget [link]`
+- use `share [file]` to upload file
+- you will get a link that can be downloaded by `wget [link]`
 
-## features
-
-1. optimized for shell use, just `curl` and `wget` to share file
-2. share file anonymous, no login required
-3. file will be deleted after 7 days by default

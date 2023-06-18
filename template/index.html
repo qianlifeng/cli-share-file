@@ -48,6 +48,9 @@
         <input type="file" id="file"/>
         <button class="btn btn-primary" id="upload" onclick="uploadFile()">Upload</button>
         <div style="margin-top:20px;" id="result"></div>
+        <div class="alert alert-secondary" style="width:60%;margin:40px auto;" role="alert">
+            share() { curl --progress-bar -F "file=@$1" https://{yourdomain} | tee /dev/null }
+        </div>
     </main>
 
     <footer class="mt-auto text-white-50" style="font-size:14px;">

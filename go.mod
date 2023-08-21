@@ -1,6 +1,6 @@
 module github.com/qianlifeng/tshare
 
-go 1.20
+go 1.21
 
 require (
 	github.com/glebarez/sqlite v1.9.0

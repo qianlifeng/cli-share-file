@@ -65,10 +65,8 @@ func home(c *fiber.Ctx) error {
 }
 
 func upload(c *fiber.Ctx) error {
-	log.Printf("start upload file")
 	file, err := c.FormFile("file")
 	if err != nil {
-		log.Printf("upload error: %s", err.Error())
 		return err
 	}
 
@@ -114,7 +112,7 @@ func postAppStart() {
 
 func migrateDB() {
 	db := util.GetDB()
-	db.AutoMigrate(&entity.Upload{})
+	_ = db.AutoMigrate(&entity.Upload{})
 }
 
 func cleanExpiredUploads() {

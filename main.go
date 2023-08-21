@@ -65,8 +65,10 @@ func home(c *fiber.Ctx) error {
 }
 
 func upload(c *fiber.Ctx) error {
+	log.Printf("start upload file")
 	file, err := c.FormFile("file")
 	if err != nil {
+		log.Printf("upload error: %s", err.Error())
 		return err
 	}
 

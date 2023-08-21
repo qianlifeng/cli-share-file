@@ -9,6 +9,6 @@ release tag:
   # need to run follow commands first
   # - docker buildx create --use --name m1_builder
   # - docker buildx inspect --bootstrap
-  docker buildx build --platform linux/amd64,linux/arm64 -t qianlifeng/tshare -t qianlifeng/tshare:$tag . --push
+  docker buildx build --platform linux/amd64 -t qianlifeng/tshare -t qianlifeng/tshare:$tag . --push
   git tag -a v$tag -m v$tag
   git push origin v$tag

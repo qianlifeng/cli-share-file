@@ -4,7 +4,7 @@ import (
 	"embed"
 	"fmt"
 	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/template/html"
+	"github.com/gofiber/template/html/v2"
 	"github.com/qianlifeng/tshare/entity"
 	"github.com/qianlifeng/tshare/util"
 	"github.com/struCoder/pidusage"
